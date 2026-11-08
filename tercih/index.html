@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>P&amp;Y Proje Tercihi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --zemin:#003728; --kart:#0B4535; --kart2:#105441; --cizgi:rgba(0,214,151,.22);
+  --mint:#00D697; --acik:#F4F6FC; --soluk:rgba(244,246,252,.68); --uyari:#FEDC00;
+  --baslik:"Anton", Impact, "Arial Narrow", sans-serif;
+  --govde:"Archivo", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--zemin)}
+body{font-family:var(--govde);color:var(--acik);background:var(--zemin);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(120px + env(safe-area-inset-bottom,0px));
+  background-image:radial-gradient(circle,rgba(0,214,151,.10) 1.5px,transparent 2px);background-size:24px 24px;background-attachment:fixed}
+.kap{max-width:640px;margin:0 auto}
+header{padding:28px 0 8px}
+.ust{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--mint)}
+h1{font-family:var(--baslik);font-weight:400;font-size:clamp(44px,13vw,68px);line-height:1;margin:14px 0 10px}
+h1 em{font-style:normal;color:var(--mint)}
+.giris{color:var(--soluk);font-size:16px;line-height:1.5}
+.giris b{color:var(--acik)}
+.son{display:inline-block;margin-top:14px;background:var(--mint);color:var(--zemin);font-weight:700;font-size:13px;padding:6px 12px;letter-spacing:.04em}
+section{margin-top:30px}
+h2{font-family:var(--baslik);font-weight:400;font-size:26px;letter-spacing:.02em;margin-bottom:12px;display:flex;align-items:baseline;gap:10px}
+h2 small{font-family:var(--govde);font-size:13px;color:var(--soluk);letter-spacing:0}
+label.etiket{display:block;font-size:13px;color:var(--soluk);margin-bottom:6px}
+input[type=text]{width:100%;font:inherit;font-size:17px;color:var(--acik);background:var(--kart);border:2px solid var(--cizgi);padding:14px;border-radius:0;outline:none}
+input[type=text]:focus{border-color:var(--mint)}
+.cipler{display:flex;flex-wrap:wrap;gap:8px}
+.cip{font:inherit;font-size:15px;color:var(--acik);background:var(--kart);border:2px solid var(--cizgi);padding:10px 14px;cursor:pointer}
+.cip[aria-pressed=true]{background:var(--mint);border-color:var(--mint);color:var(--zemin);font-weight:700}
+.liste{display:flex;flex-direction:column;gap:10px}
+.proje{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:start;
+  background:var(--kart);border:2px solid var(--cizgi);padding:14px 16px;cursor:pointer;transition:border-color .15s,background .15s}
+.proje:hover{border-color:rgba(0,214,151,.5)}
+.proje:focus-visible,.cip:focus-visible,.gonder:focus-visible{outline:3px solid var(--uyari);outline-offset:2px}
+.proje .ad{font-weight:700;font-size:17px;line-height:1.3;min-width:0}
+.proje .kisa{grid-column:1/2;color:var(--soluk);font-size:14px;line-height:1.45;min-width:0}
+.rozet{grid-row:1/3;grid-column:2;align-self:center;width:42px;height:42px;border:2px solid var(--cizgi);display:grid;place-items:center;
+  font-family:var(--baslik);font-size:24px;color:transparent}
+.proje.s1{border-color:var(--mint);background:var(--kart2)}
+.proje.s1 .rozet{background:var(--mint);border-color:var(--mint);color:var(--zemin)}
+.proje.s2{border-color:rgba(0,214,151,.6);background:var(--kart2)}
+.proje.s2 .rozet{border-color:var(--mint);color:var(--mint)}
+.ipucu{font-size:14px;color:var(--soluk);margin-bottom:12px;line-height:1.45}
+.alt{position:fixed;left:0;right:0;bottom:0;background:rgba(0,40,29,.96);border-top:2px solid var(--mint);
+  padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));backdrop-filter:blur(6px)}
+.alt .ic{max-width:640px;margin:0 auto;display:flex;gap:12px;align-items:center}
+.ozet{flex:1;min-width:0;font-size:13px;line-height:1.4;color:var(--soluk)}
+.ozet b{color:var(--acik)}
+.ozet span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gonder{font:inherit;font-family:var(--baslik);font-size:22px;letter-spacing:.04em;background:var(--mint);color:var(--zemin);border:0;padding:12px 22px;cursor:pointer}
+.gonder:disabled{background:rgba(244,246,252,.18);color:rgba(244,246,252,.45);cursor:not-allowed}
+.tamam{text-align:left;padding:60px 0}
+.tamam h1{color:var(--mint)}
+.tamam p{color:var(--soluk);font-size:17px;line-height:1.55;margin-top:14px}
+.tamam .secim{margin-top:22px;background:var(--kart);border-left:4px solid var(--mint);padding:16px;line-height:1.7}
+.tamam button{margin-top:24px}
+.hata{color:var(--uyari);font-size:14px;margin-top:10px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="kap" id="uygulama">
+  <header>
+    <div class="ust">VBK · PROJE &amp; YARIŞMA</div>
+    <h1>PROJE<br><em>TERCİHİ</em></h1>
+    <p class="giris">Aşağıdaki projelerden <b>iki tane</b> seç. 1. tercihte <b>en az 4 kişiyi</b> toplayan proje takım olur, toplayamayanları 2. tercihlerine yerleştiririz. Takımları çarşamba duyuruyoruz.</p>
+    <span class="son">SON GÜN: 10 Kasım Salı 23:59</span>
+  </header>
+
+  <section>
+    <h2>Sen kimsin?</h2>
+    <label class="etiket" for="ad">Ad Soyad</label>
+    <input type="text" id="ad" autocomplete="name" placeholder="Adın ve soyadın">
+    <label class="etiket" style="margin-top:16px">Sınıfın</label>
+    <div class="cipler" id="sinif"></div>
+  </section>
+
+  <section>
+    <h2>Projeler <small id="sayac"></small></h2>
+    <p class="ipucu">İlk dokunduğun 1. tercih, ikincisi 2. tercih olur. Vazgeçmek için tekrar dokun.</p>
+    <div class="liste" id="liste"></div>
+  </section>
+
+  <section>
+    <h2>Takımda ne yapmak istersin?</h2>
+    <div class="cipler" id="rol"></div>
+  </section>
+</div>
+
+<div class="alt" id="alt">
+  <div class="ic">
+    <div class="ozet" id="ozet"></div>
+    <button class="gonder" id="gonder" disabled>GÖNDER</button>
+  </div>
+</div>
+
+<script>
+const V = {"projeler": [{"ad": "YTÜ Öğrenci Uygulaması", "kisa": "Ders programı, yemekhane, kayıp eşya, GPA hesabı: okulda her gün lazım olanlar tek uygulamada."}, {"ad": "Gençler İçin Finans Koçu", "kisa": "Harcamanı takip eden, bütçe öneren, sorularını cevaplayan yapay zekâ asistanı."}, {"ad": "Türkçe, Cihazda Çalışan Küçük Yapay Zekâ", "kisa": "İnternete ve büyük sunuculara ihtiyaç duymadan telefonda ya da tarayıcıda çalışan Türkçe model."}, {"ad": "Yapay Zekâ ile İçerik", "kisa": "Medya birimiyle birlikte, yapay zekâ araçlarıyla kısa video ve içerik üretimi."}, {"ad": "Davutpaşa Kampüs ve Yurt Asistanı", "kisa": "Yemekhane yoğunluğu, ring saatleri, kargo ve taksi paylaşımı, ödünç eşya, maç için oyuncu bulma."}, {"ad": "Kampüs İçi Etkinlik ve Takım Eşleştirici", "kisa": "Halı saha, basketbol, okey için ilgi, seviye ve ders programına göre takım arkadaşı eşleştirme."}, {"ad": "Yıldız Buddy", "kisa": "Yeni gelen öğrenciyi üst sınıftan biriyle eşleştirip kampüsü ve şehri tanıtan platform."}, {"ad": "Yapay Zekâ Destekli Öğrenci Ajandası", "kisa": "Mesajdan ve ekran görüntüsünden etkinlikleri ajandaya ekleyen, ne zaman ne yapacağını öneren ajanda."}, {"ad": "Kişiselleştirilmiş Etkinlik Öneri Platformu", "kisa": "İstanbul'daki etkinlikleri tek yerde toplayıp ilgi alanına göre öneren sistem."}, {"ad": "YKS Planlayıcısı", "kisa": "YKS için konu planı, net hedefi ve deneme takibi yapan yapay zekâ destekli uygulama."}, {"ad": "Staj ve İş İlanı Bildirim Botu", "kisa": "Farklı sitelerdeki ilanları tercihlerine göre süzüp sana bildirim gönderen bot."}, {"ad": "Olası Trafiğe Göre Rota", "kisa": "Hava, maç, konser, tatil gibi etkenlerden birkaç saat sonraki trafiği tahmin edip rota çizen yapay zekâ."}, {"ad": "Steam Oyun Başarı Tahmini", "kisa": "Fiyat, tür, etiket ve açıklamadan oyunun başarısını tahmin edip geliştiriciye öneri sunan model."}, {"ad": "Karbon Ayak İzi Tasarruf Asistanı", "kisa": "Kurumların elektrik, su ve atık verisinden karbon ayak izini hesaplayıp tasarruf öneren yapay zekâ."}, {"ad": "Sanal Kıyafet Deneme", "kisa": "Kıyafeti kendi fotoğrafının üzerinde deneyip kararsızlığı gideren uygulama."}, {"ad": "Öğrenciler İçin Anket ve Katılımcı Platformu", "kisa": "Tez ve araştırma anketlerine doğrulanmış öğrenci katılımcı bulan, puanla çalışan platform."}, {"ad": "Şirket İçi Anonim Tahmin Platformu", "kisa": "Çalışanların sanal puanla tahmin yaptığı, isabetli olanları öne çıkaran platform."}], "cevap": "https://docs.google.com/forms/d/e/1FAIpQLSerJW_VtTF6JCjS0z-tDsBh41e5m4ds2koQNzaeJ_QJTuUk6w/formResponse", "alanlar": {"ad": 350102759, "bir": 1576583417, "iki": 1307110662, "rol": 1442103318, "sinif": 673506491}, "siniflar": ["Hazırlık", "1. sınıf", "2. sınıf", "3. sınıf", "4. sınıf", "Yüksek lisans / mezun"], "roller": ["Kod / geliştirme", "Veri ve model", "Tasarım ve ürün", "Sunum ve araştırma", "Video ve içerik"]};
+const durum = { sinif: null, rol: null, secim: [] };
+const $ = id => document.getElementById(id);
+
+function cipler(kutu, liste, alan) {
+  liste.forEach(d => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'cip'; b.textContent = d; b.setAttribute('aria-pressed', 'false');
+    b.onclick = () => { durum[alan] = d; [...kutu.children].forEach(c => c.setAttribute('aria-pressed', String(c === b))); guncelle(); };
+    kutu.appendChild(b);
+  });
+}
+cipler($('sinif'), V.siniflar, 'sinif');
+cipler($('rol'), V.roller, 'rol');
+
+V.projeler.forEach(p => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'proje'; b.dataset.ad = p.ad;
+  b.innerHTML = '<span class="ad"></span><span class="rozet" aria-hidden="true"></span><span class="kisa"></span>';
+  b.querySelector('.ad').textContent = p.ad;
+  b.querySelector('.kisa').textContent = p.kisa;
+  b.onclick = () => {
+    const i = durum.secim.indexOf(p.ad);
+    if (i >= 0) durum.secim.splice(i, 1);
+    else if (durum.secim.length < 2) durum.secim.push(p.ad);
+    else durum.secim[1] = p.ad;
+    guncelle();
+  };
+  $('liste').appendChild(b);
+});
+$('sayac').textContent = V.projeler.length + ' proje';
+$('ad').addEventListener('input', guncelle);
+
+function guncelle() {
+  [...$('liste').children].forEach(b => {
+    const i = durum.secim.indexOf(b.dataset.ad);
+    b.classList.toggle('s1', i === 0); b.classList.toggle('s2', i === 1);
+    b.querySelector('.rozet').textContent = i >= 0 ? String(i + 1) : '';
+    b.setAttribute('aria-label', b.dataset.ad + (i >= 0 ? ', ' + (i + 1) + '. tercih' : ''));
+  });
+  const ad = $('ad').value.trim();
+  const eksik = [];
+  if (ad.length < 3) eksik.push('adını');
+  if (!durum.sinif) eksik.push('sınıfını');
+  if (durum.secim.length < 2) eksik.push(durum.secim.length ? '2. tercihini' : 'iki tercihini');
+  if (!durum.rol) eksik.push('ne yapmak istediğini');
+  $('ozet').innerHTML = '';
+  const s1 = document.createElement('span'), s2 = document.createElement('span');
+  if (durum.secim.length) {
+    s1.innerHTML = '<b>1.</b> '; s1.append(durum.secim[0]);
+    s2.innerHTML = '<b>2.</b> '; s2.append(durum.secim[1] || '—');
+  } else {
+    s1.textContent = 'Henüz tercih yok';
+  }
+  $('ozet').append(s1, s2);
+  if (eksik.length) {
+    const e = document.createElement('span'); e.textContent = 'Eksik: ' + eksik.join(', '); $('ozet').append(e);
+  }
+  $('gonder').disabled = eksik.length > 0;
+}
+guncelle();
+
+$('gonder').onclick = async () => {
+  const b = $('gonder'); b.disabled = true; b.textContent = 'GÖNDERİLİYOR';
+  const veri = new URLSearchParams();
+  veri.append('entry.' + V.alanlar.ad, $('ad').value.trim());
+  veri.append('entry.' + V.alanlar.sinif, durum.sinif);
+  veri.append('entry.' + V.alanlar.bir, durum.secim[0]);
+  veri.append('entry.' + V.alanlar.iki, durum.secim[1]);
+  veri.append('entry.' + V.alanlar.rol, durum.rol);
+  try {
+    await fetch(V.cevap, { method: 'POST', mode: 'no-cors', body: veri });
+    try { localStorage.setItem('py-tercih', JSON.stringify({ ad: $('ad').value.trim(), secim: durum.secim, zaman: Date.now() })); } catch (e) {}
+    bitti();
+  } catch (e) {
+    b.textContent = 'GÖNDER'; b.disabled = false;
+    if (!document.querySelector('.hata')) {
+      const h = document.createElement('p'); h.className = 'hata';
+      h.textContent = 'Gönderilemedi. İnternet bağlantını kontrol edip tekrar dene.';
+      $('ozet').after(h);
+    }
+  }
+};
+
+function bitti() {
+  $('alt').hidden = true;
+  const k = $('uygulama'); k.innerHTML = '';
+  const d = document.createElement('div'); d.className = 'tamam';
+  d.innerHTML = '<div class="ust">VBK · PROJE &amp; YARIŞMA</div><h1>ALINDI</h1>' +
+    '<p>Tercihin bize ulaştı. Takımları çarşamba WhatsApp grubunda duyuracağız.</p><div class="secim"></div>' +
+    '<p>Fikrini değiştirirsen tekrar gönderebilirsin, son gönderdiğin geçerli olur.</p>' +
+    '<button class="gonder" type="button">YENİDEN SEÇ</button>';
+  const s = d.querySelector('.secim');
+  s.innerHTML = '<b>1. tercih:</b> '; s.append(durum.secim[0]);
+  s.append(document.createElement('br'));
+  const b2 = document.createElement('b'); b2.textContent = '2. tercih: '; s.append(b2, durum.secim[1]);
+  d.querySelector('button').onclick = () => location.reload();
+  k.appendChild(d);
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
